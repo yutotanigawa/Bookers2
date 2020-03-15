@@ -6,12 +6,12 @@
 				<table class="table">
 					<tbody>
 						<tr>
-						<th>name</th>
-						<th>yuto tanigawa</th>
+							<th>name</th>
+							<th>yuto tanigawa</th>
 						</tr>
 						<tr>
-						<th>introduction</th>
-						<th>konnnitiwa</th>
+							<th>introduction</th>
+							<th>konnnitiwa</th>
 						</tr>
 					</tbody>
 				</table>
@@ -19,33 +19,49 @@
 					<%= link_to "", root_path, class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
 				</div>
 				<h2>New Book</h2>
-				<!-- 新規投稿フォーム -->
+
+
+				<%= form_for(@book) do |b|  %>
+				<div class="field row">
+					<label>Title</label><br>
+					<%= b.text_field :title, class:"col-xs-12" %>
+				</div>
+				<div class="field row">
+					<label>Opinion</label>
+					<%= b.text_area :body, class:"col-xs-12" %>
+				</div>
+				<div class="actions row">
+					<%= b.submit "Create Book", class:"btn btn-primary col-xs-12 " %>
+					<!-- 新規投稿フォーム -->
+				</div>
+				<% end %>
 			</div>
-			<div class="col-xs-9">
-				<h2>Books</h2>
-				<table class="table">
-					<thead>
-						<tr>
+
+
+		<div class="col-xs-9">
+			<h2>Books</h2>
+			<table class="table">
+				<thead>
+					<tr>
 						<th></th>
 						<th>Title</th>
 						<th>Opinion</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>画像</td>
-							<td>羅生門</td>
-							<td>素晴らしい！</td>
-						</tr>
-						<tr>
-							<td>画像</td>
-							<td>人間失格</td>
-							<td>興味深い！</td>
-						</tr>
-					</tbody>
-				</table>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>画像</td>
+						<td>羅生門</td>
+						<td>素晴らしい！</td>
+					</tr>
+					<tr>
+						<td>画像</td>
+						<td>人間失格</td>
+						<td>興味深い！</td>
+					</tr>
+				</tbody>
+			</table>
 
-			</div>
 		</div>
 	</div>
 </div>
