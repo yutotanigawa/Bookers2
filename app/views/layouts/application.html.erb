@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bookers2</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Bookers2</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Bookers</a>
-    </div>
 
-    <ul class="nav navbar-nav navbar-right">
-          <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <span class="navbar-brand" >Bookers</span>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav">
+
+          <% if user_signed_in? %>
+
+          <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"> </span>Users</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-book"> </span>Books</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out"> </span>Logout</a></li>]
+
+          <% else %>
+          <li class="active"><a href="#"><span class="glyphicon glyphicon-home"> </span>Home</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-link"></span>About</a></li>
+        </ul>
+        <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+
+        <% end %>
+      </ul>
     </ul>
   </div>
 </nav>
+
 <%= yield %>
 
 <footer>
   <div class="container">
- <p class="text-right">CopyRight Infratop.inc</p>
-</footer>
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+       <p>CopyRight Infratop.inc</p>
+     </div>
+   </footer>
  </div>
-  </body>
+</div>
+</body>
 </html>
