@@ -2,6 +2,15 @@
 	<div class="container">
 		<h2>User info</h2>
 
+		<% if @user.errors.any? %>
+		<div class = "alert alert-warning">
+			<ul>
+				<% @user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
 		<%= form_for(@user) do |f| %>
 
 		<label class="form">Name</label>

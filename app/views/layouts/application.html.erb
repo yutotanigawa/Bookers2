@@ -35,11 +35,27 @@
       </li>
 
 
+
       <% end %>
     </ul>
     </ul>
   </div>
 </nav>
+
+
+
+<!-- サクセスメッセージ -->
+<div class="container">
+  <div class="row">
+    <% if flash[:notice] %>
+    <div class="flash">
+      <p class="notice"><%= flash[:notice] %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- エラーメッセージ -->
 
 <%= yield %>
 
