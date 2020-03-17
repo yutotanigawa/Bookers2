@@ -48,7 +48,8 @@
 			<table class="table">
 				<tbody>
 					<tr>
-						<td><%= attachment_image_tag @book.user, :profile_image,format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %></td>
+						<td><%= attachment_image_tag @book.user, :profile_image,format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %><br>
+						 <%= link_to @book.user do %><%= @book.user.name %><% end %></td>
 						<td><%= @book.title %></td>
 						<td><%= @book.body %></td>
 						<% if @book.user == current_user %>
